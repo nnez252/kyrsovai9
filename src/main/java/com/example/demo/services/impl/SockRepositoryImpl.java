@@ -22,28 +22,25 @@ public class SockRepositoryImpl implements SockRepository {
 
 
     private List<Sock> socks = new ArrayList<>();
-
+@Override
     public Sock save(Sock sock) {
         socks.add(sock);
         return sock;
     }
 
-    @Override
-    public Optional<Sock> findByColorAndSizeAndCottonPart(SocksColor color, SocksSize size, Object cottonPart) {
-        return Optional.empty();
-    }
+
 
     @Override
     public List<Sock> findAllByColorAndSizeAndCottonPartBetween(SocksColor color, SocksSize size, Integer cottonMin, Integer cottonMax) {
         return null;
     }
-
+@Override
     public Optional<Sock> findByColorAndSizeAndCottonPart(SocksColor color, SocksSize size, int cottonPart) {
         return socks.stream()
                 .filter(sock -> sock.getColor() == color && sock.getSize() == size && sock.getCottonPart() == cottonPart)
                 .findFirst();
     }
-
+@Override
     public void delete(Sock sock) {
         socks.remove(sock);
     }

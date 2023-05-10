@@ -12,7 +12,9 @@ public interface SockRepository {
 
     Object save(Sock updatedSock);
 
-    Optional<Sock> findByColorAndSizeAndCottonPart(SocksColor color, SocksSize size, Object cottonPart);
-
     List<Sock> findAllByColorAndSizeAndCottonPartBetween(SocksColor color, SocksSize size, Integer cottonMin, Integer cottonMax);
+
+    Optional<Sock> findByColorAndSizeAndCottonPart(SocksColor color, SocksSize size, int cottonPart);
+
+    void delete(Sock sock);
 }
