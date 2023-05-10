@@ -16,8 +16,8 @@ public class Sock {
     private Integer cottonComposition;
 
     private Integer quantity;
+    private int cottonPart;
 
-    public Object getCottonPart() {
-        return null;
-    }
+
+
 }
