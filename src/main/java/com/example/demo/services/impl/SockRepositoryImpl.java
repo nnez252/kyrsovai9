@@ -9,11 +9,13 @@ import com.example.demo.services.SockServices;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class SockRepositoryImpl implements SockRepository {
-    private SockRepository sockRepository;
 
-    private SockServices sockServices;
+
+    private final SockRepository sockRepository;
+    private final SockServices sockServices;
 
     public SockRepositoryImpl(SockRepository sockRepository, SockServices sockServices) {
         this.sockRepository = sockRepository;
@@ -32,7 +34,9 @@ public class SockRepositoryImpl implements SockRepository {
 
     @Override
     public List<Sock> findAllByColorAndSizeAndCottonPartBetween(SocksColor color, SocksSize size, Integer cottonMin, Integer cottonMax) {
-        return null;
+        return socks.stream()
+                .filter(sock -> sock.getColor() == color && sock.getSize() == size && sock.getCottonPart() >= cottonMin && sock.getCottonPart() <= cottonMax)
+                .collect(Collectors.toList());
     }
 @Override
     public Optional<Sock> findByColorAndSizeAndCottonPart(SocksColor color, SocksSize size, int cottonPart) {

@@ -5,7 +5,7 @@ import com.example.demo.model.SocksColor;
 import com.example.demo.model.SocksSize;
 import org.springframework.stereotype.Service;
 
-@Service
+
 public interface SockServices {
 
     void addSock(Sock sock);
