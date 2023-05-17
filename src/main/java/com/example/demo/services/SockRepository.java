@@ -3,7 +3,7 @@ package com.example.demo.services;
 import com.example.demo.model.Sock;
 import com.example.demo.model.SocksColor;
 import com.example.demo.model.SocksSize;
-import org.springframework.data.jpa.repository.JpaRepository;
+
 
 import java.util.List;
 import java.util.Optional;

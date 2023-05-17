@@ -4,7 +4,6 @@ import com.example.demo.model.Sock;
 import com.example.demo.model.SocksColor;
 import com.example.demo.model.SocksSize;
 import com.example.demo.services.SockServices;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +14,12 @@ public class SockController {
 
         private final SockServices sockService;
 
-        public SockController(@Qualifier("sockServices") SockServices sockService) {
-            this.sockService = sockService;
-        }
+    public SockController(SockServices sockService) {
+        this.sockService = sockService;
+    }
 
-        @PostMapping
+
+    @PostMapping
         public ResponseEntity<Void> addSock(@RequestBody Sock sock) {
             sockService.addSock(sock);
             return new ResponseEntity<>(HttpStatus.OK);
