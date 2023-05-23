@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class SocksServicesImpl implements SockServices {
+ @Service
+ public class SocksServicesImpl implements SockServices {
     private SockRepository sockRepository;
 
     public void SockService(SockRepository sockRepository) {

@@ -13,16 +13,6 @@ import java.util.stream.Collectors;
 
 public class SockRepositoryImpl implements SockRepository {
 
-
-    private final SockRepository sockRepository;
-    private final SockServices sockServices;
-
-    public SockRepositoryImpl(SockRepository sockRepository, SockServices sockServices) {
-        this.sockRepository = sockRepository;
-        this.sockServices = sockServices;
-    }
-
-
     private List<Sock> socks = new ArrayList<>();
 @Override
     public Sock save(Sock sock) {
