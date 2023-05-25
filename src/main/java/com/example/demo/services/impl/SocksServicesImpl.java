@@ -18,9 +18,6 @@ import java.util.Optional;
         this.sockRepository = sockRepository;
     }
 
-    public SocksServicesImpl(SockRepository sockRepository) {
-        this.sockRepository = sockRepository;
-    }
 
     public void addSock(Sock sock) {
         Optional<Sock> existingSock = sockRepository.findByColorAndSizeAndCottonPart(
