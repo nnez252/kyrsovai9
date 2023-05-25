@@ -5,15 +5,14 @@ import com.example.demo.model.SocksColor;
 import com.example.demo.model.SocksSize;
 import com.example.demo.services.SockRepository;
 import com.example.demo.services.SockServices;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
-
+@Service
 public class SockRepositoryImpl implements SockRepository {
 
-    private List<Sock> socks = new ArrayList<>();
+    private Set<Sock> socks = new HashSet<>();
 @Override
     public Sock save(Sock sock) {
         socks.add(sock);
